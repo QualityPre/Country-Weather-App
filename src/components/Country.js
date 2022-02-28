@@ -2,10 +2,16 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import CountryInfo from './CountryInfo'
 
-const api_key = process.env.REACT_APP_API_KEY
+let api_key = process.env.REACT_APP_API_KEY
 
 const Country = ({ country }) => {
   const [weatherData, setWeatherData] = useState()
+
+  fetch('.netlify/functions/api')
+    .then((response) => response.json())
+    .then((json) => {
+      api_key = json.api
+    })
 
   let capital = country.capital
   const weatherHook = () => {
