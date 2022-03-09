@@ -27,7 +27,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/QualityPre/Country-Weather-App">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./src/images/logo.png" alt="Logo" width="100" height="80">
   </a>
 
 <h3 align="center">Find Country and Weather App</h3>
@@ -76,7 +76,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="./src/images/weatherapp.png" alt="drawing" width="90"/>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -197,5 +197,5 @@ This was an exercise from:
 [license-shield]: https://img.shields.io/github/license/QualityPre/Country-Weather-App.svg?style=for-the-badge
 [license-url]: https://github.com/QualityPre/Country-Weather-App/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/qualityprename
+[linkedin-url]: https://linkedin.com/in/qualitypre
 [product-screenshot]: images/screenshot.png
