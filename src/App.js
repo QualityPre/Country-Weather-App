@@ -1,31 +1,29 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 //components
-import Content from './components/Content'
-import Filter from './components/Filter'
+
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+//pages
+import About from './components/pages/About'
+import Home from './components/pages/Home'
+import NotFound from './components/pages/NotFound'
 
 const App = () => {
-  const [countriesData, setCountriesData] = useState([]) //array  of objects with names
-  const [newFilter, setNewFilter] = useState('') //getting text from filter input
-
-  const hook = () => {
-    axios.get('https://restcountries.com/v2/all').then((response) => {
-      setCountriesData(response.data)
-    })
-  }
-
-  useEffect(hook, [])
-  // console.log(countriesData);
-
-  const handleFilter = (event) => {
-    setNewFilter(event.target.value)
-  }
-
   return (
-    <div>
-      <Filter onChange={handleFilter} value={newFilter} />
-      <Content countriesData={countriesData} newFilter={newFilter} />
-    </div>
+    <Router>
+      <div className="flex flex-col justify-between h-screen">
+        <Navbar />
+        <main className="container mx-auto px-4 pb-10">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/notfound" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
