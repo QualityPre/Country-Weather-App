@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import Content from '../Content'
 import Filter from '../Filter'
+import Divider from '../layout/Divider'
 
 const Home = () => {
   const [countriesData, setCountriesData] = useState([]) //array  of objects with names
@@ -22,10 +23,19 @@ const Home = () => {
   }
 
   return (
-    <div className="grid">
-      <Filter onChange={handleFilter} value={newFilter} />
-      <Content countriesData={countriesData} newFilter={newFilter} />
-    </div>
+    <Divider>
+      <Filter
+        className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center"
+        onChange={handleFilter}
+        value={newFilter}
+      />
+      <div className="divider lg:divider-horizontal"></div>
+      <Content
+        className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center"
+        countriesData={countriesData}
+        newFilter={newFilter}
+      />
+    </Divider>
   )
 }
 
