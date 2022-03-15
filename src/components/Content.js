@@ -21,29 +21,31 @@ const Content = ({ countriesData, newFilter }) => {
   }
 
   return (
-    <div className="flex flex-wrap gap-x-12 gap-y-12">
-      {filteredCountries.map((country) => (
-        <div key={country.numericCode} className="indicator">
-          <div className="indicator-item indicator-bottom">
-            <button
-              onClick={() => handleClick(country)}
-              className="btn btn-info btn-xs sm:btn-sm md:btn-md "
-            >
-              Show
-            </button>
-          </div>
-          <div className="card border">
-            <div className="card-body">
-              <h2 className="card-title">{country.name}</h2>
+    <div>
+      <div className="flex flex-wrap gap-x-12 gap-y-12 ">
+        {filteredCountries.map((country) => (
+          <div key={country.numericCode} className="indicator">
+            <div className="indicator-item indicator-bottom">
+              <button
+                onClick={() => handleClick(country)}
+                className="btn btn-info btn-xs sm:btn-sm md:btn-md "
+              >
+                Show
+              </button>
+            </div>
+            <div className="card border">
+              <div className="card-body">
+                <h2 className="card-title">{country.name}</h2>
+              </div>
             </div>
           </div>
-        </div>
-        // <div key={country.numericCode}>
-        //   {country.name}
-        //   <button onClick={() => handleClick(country)}>Show</button>
-        // </div>
-      ))}
-      {oneCountry ? <Country country={oneCountry} /> : ''}
+          // <div key={country.numericCode}>
+          //   {country.name}
+          //   <button onClick={() => handleClick(country)}>Show</button>
+          // </div>
+        ))}
+      </div>
+      {oneCountry ? <Country className="my-8" country={oneCountry} /> : ''}
     </div>
   )
 }
