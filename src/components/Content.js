@@ -9,7 +9,7 @@ const Content = ({ countriesData, newFilter }) => {
     country.name.toLowerCase().includes(newFilter.toLowerCase())
   )
   if (filteredCountries.length === 250) return <p> Type!</p>
-  if (filteredCountries.length > 20)
+  if (filteredCountries.length > 5)
     return <p>Too many country matches, please refine your search</p>
 
   if (filteredCountries.length === 1) {
@@ -24,11 +24,14 @@ const Content = ({ countriesData, newFilter }) => {
     <div>
       <div className="flex flex-wrap gap-x-12 gap-y-12 ">
         {filteredCountries.map((country) => (
-          <div key={country.numericCode} className="indicator">
-            <div className="indicator-item indicator-bottom">
+          <div
+            key={country.numericCode}
+            className="indicator hover:text-zinc-400"
+          >
+            <div className="indicator-item indicator-bottom ">
               <button
                 onClick={() => handleClick(country)}
-                className="btn btn-info btn-xs sm:btn-sm md:btn-md "
+                className="btn  btn-xs sm:btn-sm md:btn-md  "
               >
                 Show
               </button>
@@ -39,13 +42,9 @@ const Content = ({ countriesData, newFilter }) => {
               </div>
             </div>
           </div>
-          // <div key={country.numericCode}>
-          //   {country.name}
-          //   <button onClick={() => handleClick(country)}>Show</button>
-          // </div>
         ))}
       </div>
-      {oneCountry ? <Country className="my-8" country={oneCountry} /> : ''}
+      {oneCountry ? <Country country={oneCountry} /> : ''}
     </div>
   )
 }
