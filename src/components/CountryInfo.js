@@ -1,4 +1,4 @@
-import React from 'react'
+import Card from './helper/Card'
 import { GiCapitol, GiMoneyStack } from 'react-icons/gi'
 import { MdEmojiPeople } from 'react-icons/md'
 import { FaMapMarkedAlt } from 'react-icons/fa'
@@ -9,8 +9,7 @@ const CountryInfo = ({ country }) => {
       <figure>
         <img className="opacity-70" src={country.flag} alt="Country flag" />
       </figure>
-      <div className="card-body flex flex-col gap-6   ">
-        <h1 className="card-title">{country.name}</h1>
+      <Card title={country.name}>
         <p className="text-2xl hover:text-red-900">
           <GiCapitol className="inline pr-4 text-4xl" /> {country.capital}
         </p>
@@ -30,7 +29,7 @@ const CountryInfo = ({ country }) => {
             {currency.name} ({currency.symbol})
           </p>
         ))}
-      </div>
+      </Card>
     </div>
   )
 }
