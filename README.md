@@ -129,9 +129,11 @@ simply type in any country. If there is only one country it will automatically d
 
 ## Roadmap
 
-- [ ] Re-design of the site, using TailwindCSS
-- [ ] Add extra country information
-- [ ] Extend the app for other place
+- [x] Re-design of the site, using TailwindCSS
+- [x] Add extra country information
+- [ ] Able to clear selected country data
+- [ ] Add random country information button
+- [ ] Extend the app for other places
   - [ ] Show the weather
 
 See the [open issues](https://github.com/QualityPre/Country-Weather-App/issues) for a full list of proposed features (and known issues).
@@ -177,7 +179,7 @@ Project Link: [https://github.com/QualityPre/Country-Weather-App](https://github
 
 ## Acknowledgments
 
-This was an exercise from:
+This was based on an exercise from:
 
 - [Full Stack Open](https://fullstackopen.com/)
 
